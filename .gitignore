@@ -102,3 +102,4 @@ ENV/
 
 # application db
 app.db
+/logs
