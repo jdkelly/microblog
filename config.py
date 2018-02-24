@@ -19,4 +19,4 @@ class Config(object):
     ADMINS = ['kelytics.dev@gmail.com']
 
     # Application settings
-    POSTS_PER_PAGE = 10
+    POSTS_PER_PAGE = 3
