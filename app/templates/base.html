@@ -1,5 +1,10 @@
 {% extends 'bootstrap/base.html' %}
 
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
 {% block title %}
 	{% if title %}
 		{{ title }} - Microblog{% else %}Welcome to Microblog
@@ -20,16 +25,24 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                    <li class="nav-link"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="nav-link"><a href="{{ url_for('explore') }}">Explore</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li class="nav-link"><a href="{{ url_for('login') }}">Login</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li class="nav-link"><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
+                    <li class="nav-link"><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% endif %}
+                    <li class="dropdown nav-link">
+                        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
