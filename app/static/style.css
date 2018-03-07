@@ -3,7 +3,6 @@
 }
 
 .navbar {
-    color: yellow !important;
     background-color: darkblue !important;
     text-decoration: none;
 }
@@ -15,8 +14,7 @@
 
 .nav-link:hover {
     background-color: crimson;
-    text-transform: lowercase;
-    padding-bottom: 5px;
+    text-transform: none;
 }
 
 # Drop down styling
@@ -55,4 +53,10 @@ li.dropdown {
 
 .avatar {
     padding-right: 10px;
+}
+
+# Flask Moment
+
+.flask-moment {
+    display: inline
 }
